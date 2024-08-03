@@ -28,6 +28,7 @@ def add_event():                                  #method to add event
     event_date = input(("Enter the D/M/Y of the event:-"))
     events.append({"Event name": event_name, "Event Date" : event_date})
     save_events()
+    print("Successfully added Event!")
                                                   #adding events in the form of dictionary to the list of events
 def delete_event():                               #method to delete any event based on he index in the list 
     print("")
@@ -36,6 +37,7 @@ def delete_event():                               #method to delete any event ba
         event_del = int(input("Enter the Event number you want to delete(0,1,2,3...):"))
         events.pop(event_del)
         save_events()
+        print("Successfully Deleted Event!")
     except Exception as er:
         print("Event is not there",er)
     
@@ -43,6 +45,7 @@ def display_events(events):                       #method to display the events 
     print("")
     if events:                              #checking if the events is not empty
         events_table = pandas.DataFrame(events)
+        print("Displaying Events!")
         print(events_table)
     else:
         print("Empty Events list!")
